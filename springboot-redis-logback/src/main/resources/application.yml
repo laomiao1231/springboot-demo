@@ -1,0 +1,38 @@
+server:
+  port: 8090
+spring:
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///dbgril?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useSSL=true
+    username: root
+    password: root
+    hikari:
+      maxLifetime: 1765000
+      maximumPoolSize: 15
+  redis:
+    host: 118.24.127.60
+    port: 6379
+    timeout: 20000ms
+    lettuce:
+      pool:
+        max-idle: 8
+        min-idle: 2
+        max-active: 8
+        max-wait: 10000ms
+#  rabbitmq:
+#    host: 118.24.127.60
+#    port: 5672
+#    username: mxf
+#    password: mxf123
+#    virtual-host: /
+#    publisher-confirms: true
+#    publisher-returns: true
+#    listener:
+#      direct:
+#        acknowledge-mode: manual
+#      simple:
+#        acknowledge-mode: manual
