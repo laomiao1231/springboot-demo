@@ -1,0 +1,35 @@
+server:
+  port: 8080
+
+
+spring:
+    datasource:
+        name: mysql_test
+        master:
+          #基本属性--注意，这里的为【jdbcurl】-- 默认使用HikariPool作为数据库连接池
+          jdbcurl: jdbc:mysql://127.0.0.1:3306/any?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=true
+          username: root
+          password: root
+          driver-class-name: com.mysql.jdbc.Driver
+        slave:
+          #基本属性--注意，这里为 【url】-- 使用 druid 作为数据库连接池
+          jdbcurl: jdbc:mysql://127.0.0.1:3306/demo?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=true
+          username: root
+          password: root
+          driver-class-name: com.mysql.jdbc.Driver
+        read: get,select,count,list,query,find
+        write: add,create,update,delete,remove,insert
+
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.winterchen.model
+
+
+#pagehelper
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+    returnPageInfo: check
