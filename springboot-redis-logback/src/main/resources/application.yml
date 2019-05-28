@@ -14,7 +14,7 @@ spring:
       maxLifetime: 1765000
       maximumPoolSize: 15
   redis:
-    host: 118.24.127.60
+    host: ******
     port: 6379
     timeout: 20000ms
     lettuce:
@@ -24,10 +24,10 @@ spring:
         max-active: 8
         max-wait: 10000ms
 #  rabbitmq:
-#    host: 118.24.127.60
+#    host: *****
 #    port: 5672
-#    username: mxf
-#    password: mxf123
+#    username: ***
+#    password: ***
 #    virtual-host: /
 #    publisher-confirms: true
 #    publisher-returns: true
